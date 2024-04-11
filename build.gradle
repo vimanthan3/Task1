@@ -2,8 +2,7 @@ plugins {
     id 'groovy'
     id 'application'
     id 'com.github.johnrengelman.shadow' version '5.2.0'
-    id 'io.spring.dependency-management' version '1.1.4'
-    id 'com.github.package-url.cyclonedx' version '1.8.0' // Apply the CycloneDX plugin
+    
 }
 
 repositories {
@@ -26,14 +25,4 @@ application {
     mainClassName = 'com.adjectivecolournoun.gradle.Greetz'
 }
 
-cyclonedx {
-    includeConfigs = ["runtimeClasspath"]
-    projectType = "application"
-    schemaVersion = "1.5"
-    destination = file("build/reports")
-    outputName = "bom"
-    outputFormat = "xml"
-    includeBomSerialNumber = false
-    includeLicenseText = false
-    componentVersion = "2.0.0"
-}
+
