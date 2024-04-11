@@ -16,7 +16,7 @@ cyclonedxBom {
     includeConfigs = ["runtimeClasspath"]
     projectType = "application"
     schemaVersion = "1.5"
-    destination = file("build/lib")
+    destination = file("build/reports")
     outputName = "bom"
     outputFormat = "xml"
     includeBomSerialNumber = false
@@ -26,12 +26,7 @@ cyclonedxBom {
 
 archivesBaseName = 'gradle-example'
 
-dependencies {
-    implementation 'org.codehaus.groovy:groovy:3.+'
-    implementation 'org.codehaus.groovy:groovy-json:3.+'
-    implementation 'com.codevineyard:hello-world:1.0.1!!'
-    implementation ':simple-jar'
-}
+
 
 application {
     mainClassName = 'com.adjectivecolournoun.gradle.Greetz'
