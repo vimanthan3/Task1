@@ -2,7 +2,7 @@ plugins {
     id 'groovy'
     id 'application'
     id 'com.github.johnrengelman.shadow' version '5.2.0'
-    id 'org.cyclonedx.bom' version '1.8.1'
+    id 'org.cyclonedx.bom' version '1.7.2'
     
 }
 
