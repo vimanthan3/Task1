@@ -12,6 +12,17 @@ repositories {
         dirs 'lib'
     }
 }
+cyclonedxBom {
+    includeConfigs = ["runtimeClasspath"]
+    projectType = "application"
+    schemaVersion = "1.5"
+    destination = file("build/reports")
+    outputName = "bom"
+    outputFormat = "xml"
+    includeBomSerialNumber = false
+    includeLicenseText = false
+    componentVersion = "2.0.0"
+}
 
 archivesBaseName = 'gradle-example'
 
@@ -25,15 +36,5 @@ dependencies {
 application {
     mainClassName = 'com.adjectivecolournoun.gradle.Greetz'
 }
-cyclonedxBom {
-    includeConfigs = ["runtimeClasspath"]
-    projectType = "application"
-    schemaVersion = "1.5"
-    destination = file("build/reports")
-    outputName = "bom"
-    outputFormat = "xml"
-    includeBomSerialNumber = false
-    includeLicenseText = false
-    componentVersion = "2.0.0"
-}
+
 
