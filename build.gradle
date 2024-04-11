@@ -3,6 +3,7 @@ plugins {
     id 'application'
     id 'com.github.johnrengelman.shadow' version '5.2.0'
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'com.github.package-url.cyclonedx' version '1.8.0' // Apply the CycloneDX plugin
 }
 
 repositories {
@@ -16,21 +17,16 @@ archivesBaseName = 'gradle-example'
 
 dependencies {
     implementation 'org.codehaus.groovy:groovy:3.+'
-
-    // Groovy module dependency
     implementation 'org.codehaus.groovy:groovy-json:3.+'
-
-    // Strictly exact version of Maven dependency
     implementation 'com.codevineyard:hello-world:1.0.1!!'
-
-    // Dependency from local jar
     implementation ':simple-jar'
 }
 
 application {
     mainClassName = 'com.adjectivecolournoun.gradle.Greetz'
 }
-cyclonedxBom {
+
+cyclonedx {
     includeConfigs = ["runtimeClasspath"]
     projectType = "application"
     schemaVersion = "1.5"
