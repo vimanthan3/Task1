@@ -2,6 +2,7 @@ plugins {
     id 'groovy'
     id 'application'
     id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'org.cyclonedx.bom' version '1.8.1'
     
 }
 
@@ -24,5 +25,15 @@ dependencies {
 application {
     mainClassName = 'com.adjectivecolournoun.gradle.Greetz'
 }
-
+cyclonedxBom {
+    includeConfigs = ["runtimeClasspath"]
+    projectType = "application"
+    schemaVersion = "1.5"
+    destination = file("build/reports")
+    outputName = "bom"
+    outputFormat = "xml"
+    includeBomSerialNumber = false
+    includeLicenseText = false
+    componentVersion = "2.0.0"
+}
 
