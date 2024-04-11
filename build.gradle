@@ -16,7 +16,7 @@ cyclonedxBom {
     includeConfigs = ["runtimeClasspath"]
     projectType = "application"
     schemaVersion = "1.5"
-    destination = file("build/reports")
+    destination = file("build/lib")
     outputName = "bom"
     outputFormat = "xml"
     includeBomSerialNumber = false
