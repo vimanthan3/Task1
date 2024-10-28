@@ -1,0 +1,20 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: My workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    steps:
+      - name: Run Bitbucket pipeline
+        uses: cloudbees-io/bitbucket-run-pipeline@v1
+        with:
+          url: ${{ secrets.BITBUCKET_URL }}
+          token: ${{ secrets.BITBUCKET_TOKEN }}
+          workspace-name: vimanthan
+          repository-name: sample-facimate
+          branch-name: main
